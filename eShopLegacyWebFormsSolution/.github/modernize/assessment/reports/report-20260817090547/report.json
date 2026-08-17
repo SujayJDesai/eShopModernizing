@@ -1,0 +1,646 @@
+{
+  "version": "1.0.0",
+  "producer": ".NET AppCAT CLI",
+  "metadata": {
+    "analysisStartTime": "2026-08-17T09:05:47.335541Z",
+    "analysisEndTime": "2026-08-17T09:05:47.5243358Z",
+    "privacyMode": "Restricted",
+    "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2271074",
+    "targetIds": [
+      "AppService.Windows",
+      "AppService.Linux",
+      "AKS.Linux",
+      "AKS.Windows",
+      "ACA",
+      "AppServiceContainer.Linux",
+      "AppServiceContainer.Windows",
+      "AppServiceManagedInstance.Windows"
+    ],
+    "targetDisplayNames": [
+      "Azure App Service",
+      "Azure Kubernetes Service",
+      "Azure Container Apps",
+      "Azure App Service Container",
+      "Azure App Service Managed Instance"
+    ],
+    "os": [
+      "windows",
+      "linux"
+    ]
+  },
+  "summary": {
+    "totalProjects": 1,
+    "totalIssues": 7,
+    "totalIncidents": 8,
+    "totalEffort": 24,
+    "charts": {
+      "severity": {
+        "mandatory": 2,
+        "optional": 4,
+        "potential": 2,
+        "information": 0
+      },
+      "category": {
+        "Scale": 2,
+        "Connection": 1,
+        "Database": 1,
+        "Identity": 1,
+        "Security": 2,
+        "Local": 1
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "eShopLegacyWebFormsSolution",
+      "issues": 7,
+      "storyPoints": 24,
+      "properties": {
+        "appName": "",
+        "frameworks": [],
+        "languages": [],
+        "tools": []
+      },
+      "incidents": [
+        {
+          "ruleId": "Scale.0001",
+          "incidentId": "2806c176-9162-4006-8a13-2cb90d8fc50f",
+          "location": "eShopLegacyWebFormsSolution",
+          "locationKind": "File",
+          "targets": {
+            "AppService.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppService.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AKS.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AKS.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "ACA": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceContainer.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceContainer.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceManagedInstance.Windows": {
+              "severity": "optional",
+              "effort": 3
+            }
+          },
+          "labels": []
+        },
+        {
+          "ruleId": "Connection.0001",
+          "incidentId": "77f163d9-fdaa-44c4-ba99-8a4749a04018",
+          "location": "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Web.config",
+          "locationKind": "File",
+          "targets": {
+            "AppService.Windows": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AppService.Linux": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AKS.Linux": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AKS.Windows": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "ACA": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AppServiceContainer.Linux": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AppServiceContainer.Windows": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AppServiceManagedInstance.Windows": {
+              "severity": "potential",
+              "effort": 3
+            }
+          },
+          "labels": []
+        },
+        {
+          "ruleId": "Database.0003",
+          "incidentId": "31493aa5-0a0d-4309-929d-7b205e10f930",
+          "location": "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Web.config",
+          "locationKind": "File",
+          "targets": {
+            "AppService.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppService.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AKS.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AKS.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "ACA": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceContainer.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceContainer.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceManagedInstance.Windows": {
+              "severity": "optional",
+              "effort": 3
+            }
+          },
+          "labels": []
+        },
+        {
+          "ruleId": "Identity.0002",
+          "incidentId": "eecea874-6368-4941-95b0-7bbc295f0fec",
+          "location": "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Web.config",
+          "locationKind": "File",
+          "targets": {
+            "AppService.Windows": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AppService.Linux": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AKS.Linux": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AKS.Windows": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "ACA": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AppServiceContainer.Linux": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AppServiceContainer.Windows": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AppServiceManagedInstance.Windows": {
+              "severity": "mandatory",
+              "effort": 3
+            }
+          },
+          "labels": []
+        },
+        {
+          "ruleId": "Scale.0002",
+          "incidentId": "8dd16aa6-cec9-475b-9525-5b5678d55d78",
+          "location": "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Web.config",
+          "locationKind": "File",
+          "targets": {
+            "AppService.Windows": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AppService.Linux": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AKS.Linux": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AKS.Windows": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "ACA": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AppServiceContainer.Linux": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AppServiceContainer.Windows": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AppServiceManagedInstance.Windows": {
+              "severity": "potential",
+              "effort": 3
+            }
+          },
+          "labels": []
+        },
+        {
+          "ruleId": "Security.0002",
+          "incidentId": "b86d913c-7e00-4fc8-a40b-2d5a1667ea7b",
+          "location": "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Web.config",
+          "locationKind": "File",
+          "targets": {
+            "AppService.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppService.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AKS.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AKS.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "ACA": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceContainer.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceContainer.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceManagedInstance.Windows": {
+              "severity": "optional",
+              "effort": 3
+            }
+          },
+          "labels": []
+        },
+        {
+          "ruleId": "Security.0002",
+          "incidentId": "6565afcb-63f8-4eb6-b89b-e782682a9c7a",
+          "location": "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Web.config",
+          "locationKind": "File",
+          "targets": {
+            "AppService.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppService.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AKS.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AKS.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "ACA": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceContainer.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceContainer.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceManagedInstance.Windows": {
+              "severity": "optional",
+              "effort": 3
+            }
+          },
+          "labels": []
+        },
+        {
+          "ruleId": "Local.0004",
+          "incidentId": "aac89a8f-6622-444d-b9ce-08664a02fefc",
+          "location": "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/log4Net.xml",
+          "locationKind": "File",
+          "targets": {
+            "AppService.Windows": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AppService.Linux": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AKS.Linux": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AKS.Windows": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "ACA": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AppServiceContainer.Linux": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AppServiceContainer.Windows": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AppServiceManagedInstance.Windows": {
+              "severity": "information",
+              "effort": 3
+            }
+          },
+          "labels": []
+        }
+      ]
+    }
+  ],
+  "rules": {
+    "Scale.0001": {
+      "id": "Scale.0001",
+      "description": "Static content detected.\n\nYour current approach of serving static content directly might lead to increased costs, performance issues, maintenance challenges (requiring application redeployment for content changes), and security risks.\n\nConsider moving static content to Azure Blob Storage and adding Azure CDN.",
+      "title": "Static content detected",
+      "severity": "optional",
+      "effort": 3,
+      "links": [
+        {
+          "title": "Azure Blob Storage",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2250574"
+        },
+        {
+          "title": "Azure CDN",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2250392"
+        }
+      ],
+      "labels": []
+    },
+    "Connection.0001": {
+      "id": "Connection.0001",
+      "description": "Connection string detected. It may not be available when your app is migrated to Azure.\n\nReview and ensure it works from Azure. If you are connecting to a database, you might need to migrate the database to Azure. There are multiple ways to do it:\n    1. Migrate to Azure SQL Database for additional benefits (see the link below).\n    2. Consider Azure SQL Managed Instance if you need features that are not available in Azure SQL Database and you don\u2019t want to use a VM.\n    3. Migrate your database servers directly to SQL Server on Azure VMs.\n\nTo assess database migration effort, you can use Azure Migrate tool, see the link below.",
+      "title": "Connection string is detected",
+      "severity": "potential",
+      "effort": 3,
+      "links": [
+        {
+          "title": "Migrate SQL Server database to Azure",
+          "url": "https://go.microsoft.com/fwlink/?LinkID=2251731"
+        },
+        {
+          "title": "Azure SQL Managed Instance",
+          "url": "https://go.microsoft.com/fwlink/?LinkID=2251613"
+        },
+        {
+          "title": "Azure Migrate",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2252410"
+        }
+      ],
+      "labels": []
+    },
+    "Database.0003": {
+      "id": "Database.0003",
+      "description": "System.Data.SqlClient dependency is detected.\n\nWhile System.Data.SqlClient will work in Azure, the newer Microsoft.Data.SqlClient package is the primary .NET SQL client moving forward and receiving the latest features. For example, Microsoft.Data.SqlClient easily allows use of Azure Managed Identity from a connection string.",
+      "title": "System.Data.SqlClient dependency detected",
+      "severity": "optional",
+      "effort": 3,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?LinkID=2242668"
+        }
+      ],
+      "labels": []
+    },
+    "Identity.0002": {
+      "id": "Identity.0002",
+      "description": "Your app is using windows authentication which is not supported on Azure App Service, Azure Container Apps and Azure Kubernetes Service.\n\nAzure App Service provides built-in authentication and authorization capabilities, so you can sign in users and access data by writing minimal or no code in your web app.\n\nFollow the link below for more information.\"",
+      "title": "Windows authentication detected",
+      "severity": "mandatory",
+      "effort": 3,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?LinkID=2242883"
+        }
+      ],
+      "labels": []
+    },
+    "Scale.0002": {
+      "id": "Scale.0002",
+      "description": "Session state stored in-proc or in local process is detected.\n\nIf you are targeting Managed Instance on Azure App Service, move session to Azure Cache for Redis or Cosmos DB. In-proc session impedes scale-out; Managed Instance does not change session semantics.\n\nWhile if targeting other Azure compute services:\n\nIn-proc or local process stored session state not immediately prevents an application from working in Azure, however, is not recommended because it would make scaling the Azure App Service or Azure Kubernetes Service more difficult.\n\nAzure provides multiple ways to store session state in a scalable way using Azure Cache for Redis, Azure Cosmos DB or other services.",
+      "title": "Session state stored in-proc or in local process is detected",
+      "severity": "potential",
+      "effort": 3,
+      "links": [
+        {
+          "title": "ASP.NET Session State Provider for Azure Cache for Redis",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2250855"
+        },
+        {
+          "title": "Use Azure Cosmos DB as an ASP.NET session state and caching provider",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2250757"
+        },
+        {
+          "title": "Azure Cosmos DB: autoscale, session state, monitoring, and more",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2250758"
+        },
+        {
+          "title": "Design to scale out",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2251007"
+        }
+      ],
+      "labels": []
+    },
+    "Security.0002": {
+      "id": "Security.0002",
+      "description": "Connection strings without configuration builders detected.  \n\n Keeping connection strings directly in the app is not the best practice and might introduce security risks, increased maintenance, scalability challenges or compliance standards (such as PCI DSS, GDPR, etc.). \n\n Instead, it is recommended to use configuration builders to get secrets from secure sources in Azure environment.",
+      "title": "Connection strings without configuration builders detected",
+      "severity": "optional",
+      "effort": 3,
+      "links": [
+        {
+          "title": "Configuration builders",
+          "url": "https://go.microsoft.com/fwlink/?LinkID=2250915"
+        },
+        {
+          "title": "Storing application secrets",
+          "url": "https://go.microsoft.com/fwlink/?LinkID=2250916"
+        },
+        {
+          "title": "Centralized app configuration and security",
+          "url": "https://go.microsoft.com/fwlink/?LinkID=2250733"
+        }
+      ],
+      "labels": []
+    },
+    "Local.0004": {
+      "id": "Local.0004",
+      "description": "Logging to local or network paths detected.\n\nIf you are targeting Managed Instance on Azure App Service, prefer Application Insights/App Service logging. If filesystem logs are required, write to a mounted Azure Files share configured via storage mounts and Key Vault secrets.\n\nLogging APIs that write to disk might not work on Azure App Service or Container.\n\nUse logging that stores logs in locations outside of the host unless its specifically required by your app. You can also use logging capabilities embedded in Azure, such as Azure App Service logging or Application Insights.\n\nFor migrating to AKS, use LogMonitor tool that can capture logs written to files, the console, or write logs and redirect them to Azure.",
+      "title": "Logging to local or network paths detected",
+      "severity": "mandatory",
+      "effort": 3,
+      "links": [
+        {
+          "title": "[Managed Instance] Storage mounts",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2346952"
+        },
+        {
+          "title": "Logging in Azure App Service",
+          "url": "https://go.microsoft.com/fwlink/?LinkID=2251711"
+        },
+        {
+          "title": "Logging in Application Insights",
+          "url": "https://go.microsoft.com/fwlink/?LinkID=2251712"
+        },
+        {
+          "title": "LogMonitor",
+          "url": "https://go.microsoft.com/fwlink/?LinkID=2251308"
+        }
+      ],
+      "labels": []
+    }
+  },
+  "security": [
+    {
+      "id": "CVE-2024-21907",
+      "title": "Improper Handling of Exceptional Conditions in Newtonsoft.Json",
+      "category": "CVE",
+      "severity": "mandatory",
+      "description": "[CVE-2024-21907](https://github.com/advisories/GHSA-5crp-9r3c-p9vr): Improper Handling of Exceptional Conditions in Newtonsoft.Json\n\nSeverity: HIGH\n\nAffected dependencies:\n  - Newtonsoft.Json:12.0.1 (declared at src/eShopLegacyWebForms/packages.config:31)\n\nRecommended fix:\n  - Upgrade Newtonsoft.Json to 13.0.1 or later",
+      "evidence": {
+        "files": [
+          "src/eShopLegacyWebForms/packages.config:31"
+        ],
+        "explanation": "[CVE-2024-21907](https://github.com/advisories/GHSA-5crp-9r3c-p9vr): Improper Handling of Exceptional Conditions in Newtonsoft.Json\n\nSeverity: HIGH\n\nAffected dependencies:\n  - Newtonsoft.Json:12.0.1 (declared at src/eShopLegacyWebForms/packages.config:31)\n\nRecommended fix:\n  - Upgrade Newtonsoft.Json to 13.0.1 or later"
+      },
+      "storyPoint": 1
+    },
+    {
+      "id": "CWE-681",
+      "title": "Incorrect Conversion between Numeric Types",
+      "category": "Code Quality",
+      "severity": "potential",
+      "description": "When converting from one data type to another, such as long to integer, data can be omitted or translated in a way that produces unexpected values. If the resulting values are used in a sensitive context, then dangerous behaviors may occur.",
+      "evidence": {
+        "files": [
+          "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Models/CatalogItemHiLoGenerator.cs",
+          "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Models/Infrastructure/CatalogDBInitializer.cs",
+          "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/ViewModel/PaginatedItemsViewModel.cs"
+        ],
+        "explanation": "CatalogItemHiLoGenerator.GetNextSequenceValue at line 23 and CatalogDBInitializer.GetSequenceIdFromSelectedDBSequence at line 328 cast Int64 database sequence values to int without bounds checks. PaginatedItemsViewModel at line 23 also casts a decimal-based page count calculation to int. These narrowing conversions can truncate larger values and yield unexpected identifiers or page counts."
+      },
+      "storyPoint": 3
+    },
+    {
+      "id": "CWE-543",
+      "title": "Use of Singleton Pattern Without Synchronization in a Multithreaded Context",
+      "category": "Concurrency & Synchronization",
+      "severity": "potential",
+      "description": "The product uses the singleton pattern when creating a resource within a multithreaded environment.",
+      "evidence": {
+        "files": [
+          "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Modules/ApplicationModule.cs",
+          "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Services/CatalogServiceMock.cs"
+        ],
+        "explanation": "ApplicationModule.Load registers CatalogServiceMock as .SingleInstance() at lines 18-22, making one shared service instance for all requests. CatalogServiceMock stores mutable shared state in the catalogItems list at lines 12-17 and mutates it in CreateCatalogItem/UpdateCatalogItem/RemoveCatalogItem without synchronization, creating a singleton-in-multithreaded-context risk."
+      },
+      "storyPoint": 5
+    },
+    {
+      "id": "CWE-567",
+      "title": "Unsynchronized Access to Shared Data in a Multithreaded Context",
+      "category": "Concurrency & Synchronization",
+      "severity": "potential",
+      "description": "The product does not properly synchronize shared data, such as static variables across threads, which can lead to undefined behavior and unpredictable data changes.",
+      "evidence": {
+        "files": [
+          "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Services/CatalogServiceMock.cs"
+        ],
+        "explanation": "CatalogServiceMock keeps a shared List<CatalogItem> in the catalogItems field (lines 12-17). Methods GetCatalogItemsPaginated, FindCatalogItem, CreateCatalogItem, UpdateCatalogItem, and RemoveCatalogItem access and mutate that shared list at lines 19-67 with no locking or thread-safe collection, allowing concurrent reads/writes across ASP.NET requests."
+      },
+      "storyPoint": 5
+    },
+    {
+      "id": "CWE-662",
+      "title": "Improper Synchronization",
+      "category": "Concurrency & Synchronization",
+      "severity": "potential",
+      "description": "The product utilizes multiple threads or processes to allow temporary access to a shared resource that can only be exclusive to one process at a time, but it does not properly synchronize these actions, which might cause simultaneous accesses of this resource by multiple threads or processes.",
+      "evidence": {
+        "files": [
+          "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Services/CatalogServiceMock.cs"
+        ],
+        "explanation": "CatalogServiceMock performs non-atomic multi-step operations on the shared catalogItems list, such as computing Max(i => i.Id) then adding a new item in CreateCatalogItem (lines 48-53), and finding then replacing an item in UpdateCatalogItem (lines 55-61), without synchronization. Concurrent execution can race and corrupt state or duplicate IDs."
+      },
+      "storyPoint": 8
+    },
+    {
+      "id": "CWE-820",
+      "title": "Missing Synchronization",
+      "category": "Concurrency & Synchronization",
+      "severity": "potential",
+      "description": "The product utilizes a shared resource in a concurrent manner but does not attempt to synchronize access to the resource.",
+      "evidence": {
+        "files": [
+          "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Modules/ApplicationModule.cs",
+          "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Services/CatalogServiceMock.cs"
+        ],
+        "explanation": "ApplicationModule makes CatalogServiceMock a shared singleton at lines 18-22, while CatalogServiceMock accesses the shared catalogItems list at lines 19-67 with no lock, Monitor, Mutex, Semaphore, or other synchronization primitive. This is a direct missing-synchronization pattern for concurrent request handling."
+      },
+      "storyPoint": 8
+    },
+    {
+      "id": "CWE-79",
+      "title": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "category": "Injection Attacks",
+      "severity": "optional",
+      "description": "The product does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users.",
+      "evidence": {
+        "files": [
+          "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Catalog/Create.aspx",
+          "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Catalog/Edit.aspx",
+          "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Catalog/Create.aspx.cs",
+          "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Catalog/Edit.aspx.cs",
+          "eShopLegacyWebFormsSolution/src/eShopLegacyWebForms/Catalog/Details.aspx"
+        ],
+        "explanation": "Catalog/Create.aspx:1 and Catalog/Edit.aspx:1 disable request validation with ValidateRequest=\"false\". Create.aspx.cs:30-46 and Edit.aspx.cs:47-64 persist Name, Description, and PictureFileName directly from form fields. Catalog/Details.aspx:8,14,21,48 then binds those stored values into ImageUrl and asp:Label Text outputs, enabling stored XSS if malicious markup/script is submitted."
+      },
+      "storyPoint": 8
+    }
+  ]
+}
