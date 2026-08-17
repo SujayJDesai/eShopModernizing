@@ -378,7 +378,7 @@
   "rules": {
     "Runtime.0002": {
       "id": "Runtime.0002",
-      "description": "Upgrade to newer target framework to get better cloud experience.\n\nIf you are targeting Managed Instance on Azure App Service, validate on .NET Framework 4.8 or move to .NET 10. Persist any runtime prerequisites via install scripts; test in staging before production.\n\nWhile if targeting other Azure compute services:\n\nApplication targeting .NET framework lower than 4.7.1 might missing features that would be needed for some cloud scenarios like scaling or getting secrets from secure external sources.\n\nAzure App Service runs apps on .NET Framework 4.8 or .NET Framework 3.5. Apps running on on .NET Framework versions older than .NET Framework 4.8 could have potential compatibility issues. It is recommended to test your application running on .NET Framework 4.8. Note that it is not necessary to re-target to .NET Framework 4.8, only to validate that the app correctly runs on that version of .NET Framework.\n\nIn the long term it is also recommended to upgrade your application to latest supported .NET 8\u002B which would significantly increase performance of your application. Use tools like .NET Upgrade Assistant to help with upgrading your application to newer .NET.",
+      "description": "Upgrade to newer target framework to get better cloud experience.\n\nIf you are targeting Managed Instance on Azure App Service, validate on .NET Framework 4.8 or move to .NET 10. Persist any runtime prerequisites via install scripts; test in staging before production.\n\nWhile if targeting other Azure compute services:\n\nApplication targeting .NET framework lower than 4.7.1 might missing features that would be needed for some cloud scenarios like scaling or getting secrets from secure external sources.\n\nAzure App Service runs apps on .NET Framework 4.8 or .NET Framework 3.5. Apps running on on .NET Framework versions older than .NET Framework 4.8 could have potential compatibility issues. It is recommended to test your application running on .NET Framework 4.8. Note that it is not necessary to re-target to .NET Framework 4.8, only to validate that the app correctly runs on that version of .NET Framework.\n\nIn the long term it is also recommended to upgrade your application to latest supported .NET 8+ which would significantly increase performance of your application. Use tools like .NET Upgrade Assistant to help with upgrading your application to newer .NET.",
       "title": "Upgrade to newer target framework to get better cloud experience",
       "severity": "optional",
       "effort": 3,
@@ -477,5 +477,57 @@
       ],
       "labels": []
     }
-  }
+  },
+  "security": [
+    {
+      "id": "CVE-2024-21907",
+      "title": "Improper Handling of Exceptional Conditions in Newtonsoft.Json",
+      "category": "CVE",
+      "severity": "mandatory",
+      "description": "[CVE-2024-21907](https://github.com/advisories/GHSA-5crp-9r3c-p9vr): Improper Handling of Exceptional Conditions in Newtonsoft.Json\n\nSeverity: HIGH\n\nAffected dependencies:\n  - Newtonsoft.Json:6.0.4 (declared at src/eShopWinForms/packages.config:5)\n\nRecommended fix:\n  - Upgrade Newtonsoft.Json to 13.0.1 or later",
+      "evidence": {
+        "files": [
+          "src/eShopWinForms/packages.config:5"
+        ],
+        "explanation": "[CVE-2024-21907](https://github.com/advisories/GHSA-5crp-9r3c-p9vr): Improper Handling of Exceptional Conditions in Newtonsoft.Json\n\nSeverity: HIGH\n\nAffected dependencies:\n  - Newtonsoft.Json:6.0.4 (declared at src/eShopWinForms/packages.config:5)\n\nRecommended fix:\n  - Upgrade Newtonsoft.Json to 13.0.1 or later"
+      },
+      "storyPoint": 1
+    },
+    {
+      "id": "CWE-789",
+      "title": "Memory Allocation with Excessive Size Value",
+      "category": "Code Quality",
+      "severity": "potential",
+      "description": "The product allocates memory based on an untrusted, large size value, but it does not ensure that the size is within expected limits, allowing arbitrary amounts of memory to be allocated.",
+      "evidence": {
+        "files": [
+          "src/eShopWinForms/Helpers/SettingsStorageExtensions.cs:100",
+          "src/eShopWinForms/Helpers/SettingsStorageExtensions.cs:101"
+        ],
+        "explanation": "SettingsStorageExtensions.ReadBytesAsync reads the StorageFile stream size and immediately allocates a byte array of that size (`new byte[stream.Size]`) without enforcing an application maximum. A very large file selected or opened through this helper can force excessive memory allocation."
+      },
+      "storyPoint": 5
+    },
+    {
+      "id": "CWE-778",
+      "title": "Insufficient Logging",
+      "category": "Credentials & Secrets",
+      "severity": "potential",
+      "description": "When a security-critical event occurs, the product either does not record the event or omits important details about the event when logging it.",
+      "evidence": {
+        "files": [
+          "src/eShopWCFService/ICatalogService.cs:25",
+          "src/eShopWCFService/ICatalogService.cs:28",
+          "src/eShopWCFService/ICatalogService.cs:30",
+          "src/eShopWCFService/ICatalogService.cs:32",
+          "src/eShopWCFService/CatalogService.svc.cs:65",
+          "src/eShopWCFService/CatalogService.svc.cs:73",
+          "src/eShopWCFService/CatalogService.svc.cs:79",
+          "src/eShopWCFService/CatalogService.svc.cs:99"
+        ],
+        "explanation": "ICatalogService exposes catalog and stock mutation operations (CreateAvailableStock, CreateCatalogItem, UpdateCatalogItem, RemoveCatalogItem). CatalogService.svc.cs performs the corresponding Entity Framework SaveChanges calls without any logging or audit event recording for these security-relevant data changes."
+      },
+      "storyPoint": 3
+    }
+  ]
 }
