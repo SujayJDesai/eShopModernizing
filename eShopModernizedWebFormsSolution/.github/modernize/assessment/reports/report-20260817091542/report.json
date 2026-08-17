@@ -108,5 +108,25 @@
       },
       "storyPoint": 3
     }
+  ],
+  "rules": {},
+  "projects": [
+    {
+      "properties": {
+        "repo": "eShopModernizedWebFormsSolution",
+        "appName": "eShopModernizedWebFormsSolution",
+        "languages": [
+          "C#"
+        ],
+        "frameworks": [
+          ".NET Framework 4.7.2"
+        ],
+        "tools": [
+          "MSBuild",
+          "NuGet"
+        ]
+      },
+      "incidents": []
+    }
   ]
 }
