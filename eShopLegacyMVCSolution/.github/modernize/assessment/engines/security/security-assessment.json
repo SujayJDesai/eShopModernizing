@@ -1,0 +1,177 @@
+{
+  "GeneratedAt": "2026-08-17T09:12:32.6490000Z",
+  "ProjectPath": ".",
+  "Summary": {
+    "TotalFindings": 12,
+    "CveCount": 4,
+    "CweCount": 8,
+    "BySeverity": {
+      "mandatory": 6,
+      "optional": 2,
+      "potential": 4
+    },
+    "ByCategory": {
+      "CVE": 4,
+      "Code Quality": 1,
+      "Concurrency & Synchronization": 3,
+      "File & Path Security": 2,
+      "Injection Attacks": 2
+    },
+    "TotalRulesAssessed": 59,
+    "RulesPassed": 51
+  },
+  "CveFindings": [
+    {
+      "Id": "CVE-2024-21907",
+      "Name": "Improper Handling of Exceptional Conditions in Newtonsoft.Json",
+      "Category": "CVE",
+      "Severity": "mandatory",
+      "StoryPoint": 1,
+      "Description": "[CVE-2024-21907](https://github.com/advisories/GHSA-5crp-9r3c-p9vr): Improper Handling of Exceptional Conditions in Newtonsoft.Json\n\nSeverity: HIGH\n\nAffected dependencies:\n  - Newtonsoft.Json:12.0.1 (declared at eShopLegacyMVCSolution/src/eShopLegacyMVC/packages.config:29)\n\nRecommended fix:\n  - Upgrade Newtonsoft.Json to 13.0.1 or later",
+      "Files": [
+        "eShopLegacyMVCSolution/src/eShopLegacyMVC/packages.config:29"
+      ],
+      "Explanation": "[CVE-2024-21907](https://github.com/advisories/GHSA-5crp-9r3c-p9vr): Improper Handling of Exceptional Conditions in Newtonsoft.Json\n\nSeverity: HIGH\n\nAffected dependencies:\n  - Newtonsoft.Json:12.0.1 (declared at eShopLegacyMVCSolution/src/eShopLegacyMVC/packages.config:29)\n\nRecommended fix:\n  - Upgrade Newtonsoft.Json to 13.0.1 or later"
+    },
+    {
+      "Id": "CVE-2025-55315",
+      "Name": "Microsoft Security Advisory CVE-2025-55315: .NET Security Feature Bypass Vulnerability",
+      "Category": "CVE",
+      "Severity": "mandatory",
+      "StoryPoint": 1,
+      "Description": "[CVE-2025-55315](https://github.com/advisories/GHSA-5rrx-jjjq-q2r5): Microsoft Security Advisory CVE-2025-55315: .NET Security Feature Bypass Vulnerability\n\nSeverity: CRITICAL\n\nAffected dependencies:\n  - Microsoft.AspNetCore.Server.Kestrel.Core:2.2.0 (transitive, pulled by Microsoft.AspNetCore at eShopLegacyMVCSolution/eShopPorted/eShopPorted.csproj:7)\n\nRecommended fix:\n  - Upgrade to a version of ASP.NET Core runtime with a patched Kestrel.Core (>= 2.3.6, or move to a supported .NET runtime)",
+      "Files": [
+        "eShopLegacyMVCSolution/eShopPorted/eShopPorted.csproj:7"
+      ],
+      "Explanation": "[CVE-2025-55315](https://github.com/advisories/GHSA-5rrx-jjjq-q2r5): Microsoft Security Advisory CVE-2025-55315: .NET Security Feature Bypass Vulnerability\n\nSeverity: CRITICAL\n\nAffected dependencies:\n  - Microsoft.AspNetCore.Server.Kestrel.Core:2.2.0 (transitive, pulled by Microsoft.AspNetCore at eShopLegacyMVCSolution/eShopPorted/eShopPorted.csproj:7)\n\nRecommended fix:\n  - Upgrade to a version of ASP.NET Core runtime with a patched Kestrel.Core (>= 2.3.6, or move to a supported .NET runtime)"
+    },
+    {
+      "Id": "CVE-2024-0056",
+      "Name": "Microsoft.Data.SqlClient and System.Data.SqlClient vulnerable to SQL Data Provider Security Feature Bypass",
+      "Category": "CVE",
+      "Severity": "mandatory",
+      "StoryPoint": 1,
+      "Description": "[CVE-2024-0056](https://github.com/advisories/GHSA-98g6-xh36-x2p7): Microsoft.Data.SqlClient and System.Data.SqlClient vulnerable to SQL Data Provider Security Feature Bypass\n\nSeverity: HIGH\n\nAffected dependencies:\n  - System.Data.SqlClient:4.6.1 (transitive, pulled by Microsoft.EntityFrameworkCore.SqlServer at eShopLegacyMVCSolution/eShopPorted/eShopPorted.csproj:22)\n\nRecommended fix:\n  - Upgrade System.Data.SqlClient to 4.8.6 or later",
+      "Files": [
+        "eShopLegacyMVCSolution/eShopPorted/eShopPorted.csproj:22"
+      ],
+      "Explanation": "[CVE-2024-0056](https://github.com/advisories/GHSA-98g6-xh36-x2p7): Microsoft.Data.SqlClient and System.Data.SqlClient vulnerable to SQL Data Provider Security Feature Bypass\n\nSeverity: HIGH\n\nAffected dependencies:\n  - System.Data.SqlClient:4.6.1 (transitive, pulled by Microsoft.EntityFrameworkCore.SqlServer at eShopLegacyMVCSolution/eShopPorted/eShopPorted.csproj:22)\n\nRecommended fix:\n  - Upgrade System.Data.SqlClient to 4.8.6 or later"
+    },
+    {
+      "Id": "CVE-2021-26701",
+      "Name": ".NET Core Remote Code Execution Vulnerability",
+      "Category": "CVE",
+      "Severity": "mandatory",
+      "StoryPoint": 1,
+      "Description": "[CVE-2021-26701](https://github.com/advisories/GHSA-ghhp-997w-qr28): .NET Core Remote Code Execution Vulnerability\n\nSeverity: CRITICAL\n\nAffected dependencies:\n  - System.Text.Encodings.Web:4.5.0 (transitive, pulled by Microsoft.AspNetCore at eShopLegacyMVCSolution/eShopPorted/eShopPorted.csproj:7)\n\nRecommended fix:\n  - Upgrade System.Text.Encodings.Web to 4.5.1 or later",
+      "Files": [
+        "eShopLegacyMVCSolution/eShopPorted/eShopPorted.csproj:7"
+      ],
+      "Explanation": "[CVE-2021-26701](https://github.com/advisories/GHSA-ghhp-997w-qr28): .NET Core Remote Code Execution Vulnerability\n\nSeverity: CRITICAL\n\nAffected dependencies:\n  - System.Text.Encodings.Web:4.5.0 (transitive, pulled by Microsoft.AspNetCore at eShopLegacyMVCSolution/eShopPorted/eShopPorted.csproj:7)\n\nRecommended fix:\n  - Upgrade System.Text.Encodings.Web to 4.5.1 or later"
+    }
+  ],
+  "CweFindings": [
+    {
+      "Id": "CWE-681",
+      "Name": "Incorrect Conversion between Numeric Types",
+      "Category": "Code Quality",
+      "Severity": "potential",
+      "StoryPoint": 3,
+      "Description": "When converting from one data type to another, such as long to integer, data can be omitted or translated in a way that produces unexpected values. If the resulting values are used in a sensitive context, then dangerous behaviors may occur.",
+      "Files": [
+        "eShopLegacyMVCSolution/src/eShopLegacyMVC/Models/CatalogItemHiLoGenerator.cs",
+        "eShopLegacyMVCSolution/src/eShopLegacyMVC/Models/Infrastructure/CatalogDBInitializer.cs"
+      ],
+      "Explanation": "In CatalogItemHiLoGenerator.GetNextSequenceValue(CatalogDBContext db) at line 23, the result of db.Database.SqlQuery<Int64>(...).Single() (an Int64) is narrowed with an unchecked (int) cast: sequenceId = (int)rawQuery.Single(). The same pattern occurs in CatalogDBInitializer.GetSequenceIdFromSelectedDBSequence at line 329: var sequenceId = (int)rawQuery.Single(). If the underlying database sequence value exceeds Int32.MaxValue, the narrowing conversion silently truncates/overflows the value, producing an incorrect sequenceId used as an entity's HiLo key generator seed."
+    },
+    {
+      "Id": "CWE-543",
+      "Name": "Use of Singleton Pattern Without Synchronization in a Multithreaded Context",
+      "Category": "Concurrency & Synchronization",
+      "Severity": "potential",
+      "StoryPoint": 5,
+      "Description": "The product uses the singleton pattern when creating a resource within a multithreaded environment.",
+      "Files": [
+        "eShopLegacyMVCSolution/src/eShopLegacyMVC/Services/CatalogServiceMock.cs",
+        "eShopLegacyMVCSolution/src/eShopLegacyMVC/Modules/ApplicationModule.cs"
+      ],
+      "Explanation": "CatalogServiceMock is registered with Autofac as a SingleInstance() service (see ApplicationModule.cs:22-23, applied when useMockData is true), so a single instance is shared across all concurrent ASP.NET MVC request threads. It holds a mutable private field `List<CatalogItem> catalogItems` (CatalogServiceMock.cs:12) that is read and mutated by CreateCatalogItem (lines 48-52), UpdateCatalogItem (lines 55-61), and RemoveCatalogItem (lines 64-67) with no lock, Monitor, or other synchronization primitive protecting access to the list. Concurrent requests calling these methods can race and corrupt the shared list (e.g. lost updates, InvalidOperationException from concurrent enumeration/mutation, or duplicate Id values from the unsynchronized `catalogItems.Max(i => i.Id)` + increment in CreateCatalogItem)."
+    },
+    {
+      "Id": "CWE-567",
+      "Name": "Unsynchronized Access to Shared Data in a Multithreaded Context",
+      "Category": "Concurrency & Synchronization",
+      "Severity": "potential",
+      "StoryPoint": 5,
+      "Description": "The product does not properly synchronize shared data, such as static variables across threads, which can lead to undefined behavior and unpredictable data changes.",
+      "Files": [
+        "eShopLegacyMVCSolution/src/eShopLegacyMVC/Services/CatalogServiceMock.cs",
+        "eShopLegacyMVCSolution/src/eShopLegacyMVC/Modules/ApplicationModule.cs"
+      ],
+      "Explanation": "CatalogServiceMock is registered with Autofac as a SingleInstance() service (see ApplicationModule.cs:22-23, applied when useMockData is true), so a single instance is shared across all concurrent ASP.NET MVC request threads. It holds a mutable private field `List<CatalogItem> catalogItems` (CatalogServiceMock.cs:12) that is read and mutated by CreateCatalogItem (lines 48-52), UpdateCatalogItem (lines 55-61), and RemoveCatalogItem (lines 64-67) with no lock, Monitor, or other synchronization primitive protecting access to the list. Concurrent requests calling these methods can race and corrupt the shared list (e.g. lost updates, InvalidOperationException from concurrent enumeration/mutation, or duplicate Id values from the unsynchronized `catalogItems.Max(i => i.Id)` + increment in CreateCatalogItem)."
+    },
+    {
+      "Id": "CWE-820",
+      "Name": "Missing Synchronization",
+      "Category": "Concurrency & Synchronization",
+      "Severity": "potential",
+      "StoryPoint": 8,
+      "Description": "The product utilizes a shared resource in a concurrent manner but does not attempt to synchronize access to the resource.",
+      "Files": [
+        "eShopLegacyMVCSolution/src/eShopLegacyMVC/Services/CatalogServiceMock.cs",
+        "eShopLegacyMVCSolution/src/eShopLegacyMVC/Modules/ApplicationModule.cs"
+      ],
+      "Explanation": "CatalogServiceMock is registered with Autofac as a SingleInstance() service (see ApplicationModule.cs:22-23, applied when useMockData is true), so a single instance is shared across all concurrent ASP.NET MVC request threads. It holds a mutable private field `List<CatalogItem> catalogItems` (CatalogServiceMock.cs:12) that is read and mutated by CreateCatalogItem (lines 48-52), UpdateCatalogItem (lines 55-61), and RemoveCatalogItem (lines 64-67) with no lock, Monitor, or other synchronization primitive protecting access to the list. Concurrent requests calling these methods can race and corrupt the shared list (e.g. lost updates, InvalidOperationException from concurrent enumeration/mutation, or duplicate Id values from the unsynchronized `catalogItems.Max(i => i.Id)` + increment in CreateCatalogItem)."
+    },
+    {
+      "Id": "CWE-22",
+      "Name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+      "Category": "File & Path Security",
+      "Severity": "optional",
+      "StoryPoint": 8,
+      "Description": "The product uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the product does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory.",
+      "Files": [
+        "eShopLegacyMVCSolution/src/eShopLegacyMVC/Controllers/PicController.cs",
+        "eShopLegacyMVCSolution/eShopPorted/Controllers/PicController.cs"
+      ],
+      "Explanation": "In PicController.Index(int catalogItemId) the picture file name (item.PictureFileName, sourced from the CatalogItem entity) is concatenated into a filesystem path with Path.Combine(webRoot, item.PictureFileName) at src/eShopLegacyMVC/Controllers/PicController.cs:39 and then read directly with System.IO.File.ReadAllBytes(path) at line 44 (same pattern at eShopPorted/Controllers/PicController.cs:40,45). The PictureFileName value is never validated or sanitized to strip path separators or '..' sequences before being used to build the file path, so a value containing traversal sequences could cause the file read to escape the intended '~/Pics' directory."
+    },
+    {
+      "Id": "CWE-23",
+      "Name": "Relative Path Traversal",
+      "Category": "File & Path Security",
+      "Severity": "optional",
+      "StoryPoint": 5,
+      "Description": "The product uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize sequences such as .. that can resolve to a location that is outside of that directory.",
+      "Files": [
+        "eShopLegacyMVCSolution/src/eShopLegacyMVC/Controllers/PicController.cs",
+        "eShopLegacyMVCSolution/eShopPorted/Controllers/PicController.cs"
+      ],
+      "Explanation": "Same code path as CWE-22: item.PictureFileName is combined with the '~/Pics' web root via Path.Combine at src/eShopLegacyMVC/Controllers/PicController.cs:39 (and eShopPorted/Controllers/PicController.cs:40) without stripping relative traversal sequences like '..', allowing the resolved path to escape the restricted Pics directory."
+    },
+    {
+      "Id": "CWE-89",
+      "Name": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "Category": "Injection Attacks",
+      "Severity": "mandatory",
+      "StoryPoint": 13,
+      "Description": "The product constructs all or part of an SQL command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended SQL command when it is sent to a downstream component. Without sufficient removal or quoting of SQL syntax in user-controllable inputs, the generated SQL query can cause those inputs to be interpreted as SQL instead of ordinary user data.",
+      "Files": [
+        "eShopLegacyMVCSolution/src/eShopLegacyMVC/Models/Infrastructure/CatalogDBInitializer.cs"
+      ],
+      "Explanation": "In CatalogDBInitializer.GetSequenceIdFromSelectedDBSequence(CatalogDBContext context, string dBSequenceName) at line 328, a raw SQL statement is built via string interpolation: context.Database.SqlQuery<Int64>($\"SELECT NEXT VALUE FOR {dBSequenceName}\") instead of using a parameterized query. The dBSequenceName value is concatenated directly into the SQL text, so any caller passing externally-influenced data through this method would allow SQL injection."
+    },
+    {
+      "Id": "CWE-502",
+      "Name": "Deserialization of Untrusted Data",
+      "Category": "Injection Attacks",
+      "Severity": "mandatory",
+      "StoryPoint": 13,
+      "Description": "The product deserializes untrusted data without sufficiently ensuring that the resulting data will be valid.",
+      "Files": [
+        "eShopLegacyMVCSolution/eShopLegacy.Utilities/Serializing.cs"
+      ],
+      "Explanation": "Serializing.DeserializeBinary(Stream stream) at lines 17-21 deserializes an arbitrary input Stream using System.Runtime.Serialization.Formatters.Binary.BinaryFormatter, which is well known to allow arbitrary code execution when deserializing untrusted/attacker-controlled data. The method accepts any Stream with no validation of its origin or content prior to deserialization."
+    }
+  ]
+}
