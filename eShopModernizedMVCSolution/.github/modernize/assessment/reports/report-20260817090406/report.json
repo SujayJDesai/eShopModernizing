@@ -1,0 +1,404 @@
+{
+  "version": "1.0.0",
+  "producer": ".NET AppCAT CLI",
+  "metadata": {
+    "analysisStartTime": "2026-08-17T09:04:06.6390454Z",
+    "analysisEndTime": "2026-08-17T09:04:06.8501822Z",
+    "privacyMode": "Restricted",
+    "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2271074",
+    "targetIds": [
+      "AppService.Windows",
+      "AppService.Linux",
+      "AKS.Linux",
+      "AKS.Windows",
+      "ACA",
+      "AppServiceContainer.Linux",
+      "AppServiceContainer.Windows",
+      "AppServiceManagedInstance.Windows"
+    ],
+    "targetDisplayNames": [
+      "Azure App Service",
+      "Azure Kubernetes Service",
+      "Azure Container Apps",
+      "Azure App Service Container",
+      "Azure App Service Managed Instance"
+    ],
+    "os": [
+      "windows",
+      "linux"
+    ]
+  },
+  "summary": {
+    "totalProjects": 1,
+    "totalIssues": 5,
+    "totalIncidents": 5,
+    "totalEffort": 15,
+    "charts": {
+      "severity": {
+        "mandatory": 1,
+        "optional": 3,
+        "potential": 1,
+        "information": 0
+      },
+      "category": {
+        "Scale": 1,
+        "Database": 2,
+        "Identity": 1,
+        "Security": 1
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "eShopModernizedMVCSolution",
+      "issues": 5,
+      "storyPoints": 15,
+      "properties": {
+        "appName": "",
+        "frameworks": [],
+        "languages": [],
+        "tools": []
+      },
+      "incidents": [
+        {
+          "ruleId": "Scale.0001",
+          "incidentId": "ee957cc8-90fd-4f62-92cd-72bcad713802",
+          "location": "eShopModernizedMVCSolution",
+          "locationKind": "File",
+          "targets": {
+            "AppService.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppService.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AKS.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AKS.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "ACA": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceContainer.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceContainer.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceManagedInstance.Windows": {
+              "severity": "optional",
+              "effort": 3
+            }
+          },
+          "labels": []
+        },
+        {
+          "ruleId": "Database.0002",
+          "incidentId": "c4c48b50-2f0b-4399-8dac-4961cb128498",
+          "location": "eShopModernizedMVCSolution/src/eShopModernizedMVC/Web.config",
+          "locationKind": "File",
+          "targets": {
+            "AppService.Windows": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AppService.Linux": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AKS.Linux": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AKS.Windows": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "ACA": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AppServiceContainer.Linux": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AppServiceContainer.Windows": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "AppServiceManagedInstance.Windows": {
+              "severity": "potential",
+              "effort": 3
+            }
+          },
+          "labels": []
+        },
+        {
+          "ruleId": "Database.0003",
+          "incidentId": "c7c08239-bc93-4afa-abbc-a2533eec7056",
+          "location": "eShopModernizedMVCSolution/src/eShopModernizedMVC/Web.config",
+          "locationKind": "File",
+          "targets": {
+            "AppService.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppService.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AKS.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AKS.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "ACA": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceContainer.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceContainer.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceManagedInstance.Windows": {
+              "severity": "optional",
+              "effort": 3
+            }
+          },
+          "labels": []
+        },
+        {
+          "ruleId": "Identity.0002",
+          "incidentId": "47c104c8-ca0d-4532-9fb6-ad30fb7320f2",
+          "location": "eShopModernizedMVCSolution/src/eShopModernizedMVC/Web.config",
+          "locationKind": "File",
+          "targets": {
+            "AppService.Windows": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AppService.Linux": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AKS.Linux": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AKS.Windows": {
+              "severity": "potential",
+              "effort": 3
+            },
+            "ACA": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AppServiceContainer.Linux": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AppServiceContainer.Windows": {
+              "severity": "mandatory",
+              "effort": 3
+            },
+            "AppServiceManagedInstance.Windows": {
+              "severity": "mandatory",
+              "effort": 3
+            }
+          },
+          "labels": []
+        },
+        {
+          "ruleId": "Security.0003",
+          "incidentId": "97f676a3-8e71-41a7-b37f-3236ea4dd5b5",
+          "location": "eShopModernizedMVCSolution/src/eShopModernizedMVC/Web.config",
+          "locationKind": "File",
+          "targets": {
+            "AppService.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppService.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AKS.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AKS.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "ACA": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceContainer.Linux": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceContainer.Windows": {
+              "severity": "optional",
+              "effort": 3
+            },
+            "AppServiceManagedInstance.Windows": {
+              "severity": "mandatory",
+              "effort": 3
+            }
+          },
+          "labels": []
+        }
+      ]
+    }
+  ],
+  "rules": {
+    "Scale.0001": {
+      "id": "Scale.0001",
+      "description": "Static content detected.\n\nYour current approach of serving static content directly might lead to increased costs, performance issues, maintenance challenges (requiring application redeployment for content changes), and security risks.\n\nConsider moving static content to Azure Blob Storage and adding Azure CDN.",
+      "title": "Static content detected",
+      "severity": "optional",
+      "effort": 3,
+      "links": [
+        {
+          "title": "Azure Blob Storage",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2250574"
+        },
+        {
+          "title": "Azure CDN",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2250392"
+        }
+      ],
+      "labels": []
+    },
+    "Database.0002": {
+      "id": "Database.0002",
+      "description": "SQL database connection detected.\n\nEnsure the database is available/reachable on Azure.\n\nIf it is not, there are multiple ways you can move your data to Azure:\n    1. Migrate to Azure SQL Database.\n    2. Consider Azure SQL Managed Instance if you need features that are not available in Azure SQL Database and you don\u2019t want to use a VM.\n    3. Migrate your database servers directly to SQL Server on Azure VMs.\n\nTo assess database migration effort, you can use Azure Migrate tool, see the link below.",
+      "title": "SQL database connection detected",
+      "severity": "potential",
+      "effort": 3,
+      "links": [
+        {
+          "title": "Migrate SQL Server database to Azure",
+          "url": "https://go.microsoft.com/fwlink/?LinkID=2251731"
+        },
+        {
+          "title": "Azure SQL Managed Instance",
+          "url": "https://go.microsoft.com/fwlink/?LinkID=2251613"
+        },
+        {
+          "title": "Azure Migrate",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2252410"
+        }
+      ],
+      "labels": []
+    },
+    "Database.0003": {
+      "id": "Database.0003",
+      "description": "System.Data.SqlClient dependency is detected.\n\nWhile System.Data.SqlClient will work in Azure, the newer Microsoft.Data.SqlClient package is the primary .NET SQL client moving forward and receiving the latest features. For example, Microsoft.Data.SqlClient easily allows use of Azure Managed Identity from a connection string.",
+      "title": "System.Data.SqlClient dependency detected",
+      "severity": "optional",
+      "effort": 3,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?LinkID=2242668"
+        }
+      ],
+      "labels": []
+    },
+    "Identity.0002": {
+      "id": "Identity.0002",
+      "description": "Your app is using windows authentication which is not supported on Azure App Service, Azure Container Apps and Azure Kubernetes Service.\n\nAzure App Service provides built-in authentication and authorization capabilities, so you can sign in users and access data by writing minimal or no code in your web app.\n\nFollow the link below for more information.\"",
+      "title": "Windows authentication detected",
+      "severity": "mandatory",
+      "effort": 3,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?LinkID=2242883"
+        }
+      ],
+      "labels": []
+    },
+    "Security.0003": {
+      "id": "Security.0003",
+      "description": "Hardcoded sensitive data detected.\n\nIf you are targeting Managed Instance on Azure App Service, externalize secrets to Key Vault/App Configuration; use managed identity instead of passwords or embedded connection strings.\n\nWhile if targeting other Azure compute services:\n\nAvoid placing sensitive data such as passwords, ids, tokens etc., directly in config files and code since it compromises the security of your application.\n\nUse Azure App Configuration or Azure KeyVault to store secrets.",
+      "title": "Hardcoded sensitive data detected",
+      "severity": "optional",
+      "effort": 3,
+      "links": [
+        {
+          "title": "Centralized app configuration and security",
+          "url": "https://go.microsoft.com/fwlink/?LinkID=2250733"
+        }
+      ],
+      "labels": []
+    }
+  },
+  "security": [
+    {
+      "Id": "CWE-775",
+      "Name": "Missing Release of File Descriptor or Handle after Effective Lifetime",
+      "Category": "Code Quality",
+      "Severity": "potential",
+      "StoryPoint": 3,
+      "Description": "The product does not release a file descriptor or handle after its effective lifetime has ended, i.e., after the file descriptor/handle is no longer needed.",
+      "Files": [
+        "src/eShopModernizedMVC/Services/ImageAzureStorage.cs"
+      ],
+      "Explanation": "`UpLoadImageFromFile` (Services/ImageAzureStorage.cs, line 111) opens a file handle with `File.OpenRead(filePath)` but never disposes or closes the returned `FileStream` (no `using` statement or explicit `Dispose()`/`Close()` call), leaking the file handle after the upload completes."
+    },
+    {
+      "Id": "CWE-567",
+      "Name": "Unsynchronized Access to Shared Data in a Multithreaded Context",
+      "Category": "Concurrency & Synchronization",
+      "Severity": "potential",
+      "StoryPoint": 5,
+      "Description": "The product does not properly synchronize shared data, such as static variables across threads, which can lead to undefined behavior and unpredictable data changes.",
+      "Files": [
+        "src/eShopModernizedMVC/Services/CatalogServiceMock.cs",
+        "src/eShopModernizedMVC/Modules/ApplicationModule.cs"
+      ],
+      "Explanation": "`CatalogServiceMock` is registered with Autofac as `SingleInstance()` (Modules/ApplicationModule.cs), meaning a single shared instance handles concurrent web requests. Its `catalogItems` list field is mutated by `CreateCatalogItem` and `UpdateCatalogItem` (Services/CatalogServiceMock.cs) with no locking or thread-safe collection, so concurrent requests can race on `Add`/indexer writes to the shared list."
+    },
+    {
+      "Id": "CWE-23",
+      "Name": "Relative Path Traversal",
+      "Category": "File & Path Security",
+      "Severity": "optional",
+      "StoryPoint": 5,
+      "Description": "The product uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize sequences such as .. that can resolve to a location that is outside of that directory.",
+      "Files": [
+        "src/eShopModernizedMVC/Services/ImageAzureStorage.cs"
+      ],
+      "Explanation": "In `ImageAzureStorage.UploadTempImage` (Services/ImageAzureStorage.cs), the user-supplied `file.FileName` from the uploaded `HttpPostedFile` is concatenated directly into the Azure Blob storage path (`path + file.FileName.ToLower()`) without stripping path separators or relative path sequences (e.g. `../`). A crafted file name could cause the resulting blob path to resolve outside the intended `temp/`/`{catalogItemId}/` prefix within the container."
+    },
+    {
+      "Id": "CWE-89",
+      "Name": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+      "Category": "Injection Attacks",
+      "Severity": "mandatory",
+      "StoryPoint": 13,
+      "Description": "The product constructs all or part of an SQL command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended SQL command when it is sent to a downstream component. Without sufficient removal or quoting of SQL syntax in user-controllable inputs, the generated SQL query can cause those inputs to be interpreted as SQL instead of ordinary user data.",
+      "Files": [
+        "src/eShopModernizedMVC/Models/Infrastructure/CatalogDBInitializer.cs"
+      ],
+      "Explanation": "`GetSequenceIdFromSelectedDBSequence` (Models/Infrastructure/CatalogDBInitializer.cs, line 326) builds a raw SQL statement via string interpolation \u2014 `context.Database.SqlQuery<Int64>($\"SELECT NEXT VALUE FOR {dBSequenceName}\")` \u2014 and executes it directly instead of using a parameterized query, which is an unsafe SQL construction pattern even though the value currently originates from internal callers."
+    }
+  ]
+}
