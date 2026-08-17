@@ -1,0 +1,181 @@
+# eShopWinForms
+
+## Summary
+
+| Metric | Value |
+|--------|-------|
+| Total Issues | 11 |
+| Mandatory Blockers | 5 |
+| Potential Issues | 3 |
+
+## Component Information
+
+| Property | Value |
+|----------|-------|
+| Language | C# |
+| Frameworks | net6.0-windows |
+| Build tools | MSBuild |
+
+## Cloud Readiness Issues
+
+| Issue Name | Criticality | Story Points | Occurrences |
+|------------|-------------|--------------|-------------|
+| Hardcoded URLs detected | Potential | 1 | [46](#Hardcoded_URLs_detected) |
+| Static content detected | Optional | 3 | [2](#Static_content_detected) |
+
+### Issue Details
+
+<details id="Hardcoded_URLs_detected">
+<summary><b>Hardcoded URLs detected</b> — affected files</summary>
+
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 158)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 16)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 195)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 299)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 232)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 399)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 402)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 399)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 402)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 405)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 408)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 405)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 408)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 369)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 372)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 369)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 372)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 393)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 396)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 393)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 396)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 375)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 378)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 375)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 378)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 381)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 384)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 381)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 384)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 387)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 390)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 387)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 390)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 423)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 426)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 423)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 426)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 417)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 420)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 417)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 420)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 411)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 414)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 411)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 414)`
+- `src/eShopWinForms/Connected Services/eShopServiceReference/Reference.cs (line 608)`
+
+</details>
+
+<details id="Static_content_detected">
+<summary><b>Static content detected</b> — affected files</summary>
+
+- `src/eShopWinForms/eShopWinForms.csproj`
+- `src/eShopWinForms/eShopWinForms.fx.csproj`
+
+</details>
+
+## Security Issues
+
+> **Note:** These issues were generated by AI and may contain inaccuracies or incomplete information. Please review carefully.
+
+| Issue Name | Criticality | Story Points | Files |
+|------------|-------------|--------------|-------|
+| CVE-2018-8292: .NET Core Information Disclosure | Mandatory | 1 | [1](#CVE-2018-8292_NET_Core_Information_Disclosure) |
+| CVE-2019-0820: Regular Expression Denial of Service in System.Text.RegularExpressions | Mandatory | 1 | [1](#CVE-2019-0820_Regular_Expression_Denial_of_Service_in_System_Text_RegularExpressions) |
+| CVE-2021-24112: .NET Core Remote Code Execution Vulnerability | Mandatory | 1 | [1](#CVE-2021-24112_NET_Core_Remote_Code_Execution_Vulnerability) |
+| CVE-2024-0056: Microsoft.Data.SqlClient and System.Data.SqlClient vulnerable to SQL Data Provider Security Feature Bypass  | Mandatory | 1 | [1](#CVE-2024-0056_Microsoft_Data_SqlClient_and_System_Data_SqlClient_vulnerable_to_SQL_Data_Provider_Security_Feature_Bypass) |
+| CVE-2024-21907: Improper Handling of Exceptional Conditions in Newtonsoft.Json | Mandatory | 1 | [2](#CVE-2024-21907_Improper_Handling_of_Exceptional_Conditions_in_Newtonsoft_Json) |
+| CWE-681: Incorrect Conversion between Numeric Types | Potential | 3 | [1](#CWE-681_Incorrect_Conversion_between_Numeric_Types) |
+| CWE-778: Insufficient Logging | Potential | 3 | [2](#CWE-778_Insufficient_Logging) |
+| CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') | Optional | 8 | [1](#CWE-22_Improper_Limitation_of_a_Pathname_to_a_Restricted_Directory_Path_Traversal) |
+| CWE-23: Relative Path Traversal | Optional | 5 | [1](#CWE-23_Relative_Path_Traversal) |
+
+### Security Issue Details
+
+<details id="CVE-2018-8292_NET_Core_Information_Disclosure">
+<summary><b>CVE-2018-8292: .NET Core Information Disclosure</b> — affected files</summary>
+
+- `eShopModernizedNTier/src/eShopWinForms/eShopWinForms.csproj`
+
+</details>
+
+<details id="CVE-2019-0820_Regular_Expression_Denial_of_Service_in_System_Text_RegularExpressions">
+<summary><b>CVE-2019-0820: Regular Expression Denial of Service in System.Text.RegularExpressions</b> — affected files</summary>
+
+- `eShopModernizedNTier/src/eShopWinForms/eShopWinForms.csproj`
+
+</details>
+
+<details id="CVE-2021-24112_NET_Core_Remote_Code_Execution_Vulnerability">
+<summary><b>CVE-2021-24112: .NET Core Remote Code Execution Vulnerability</b> — affected files</summary>
+
+- `eShopModernizedNTier/src/eShopWinForms/eShopWinForms.csproj`
+
+</details>
+
+<details id="CVE-2024-0056_Microsoft_Data_SqlClient_and_System_Data_SqlClient_vulnerable_to_SQL_Data_Provider_Security_Feature_Bypass">
+<summary><b>CVE-2024-0056: Microsoft.Data.SqlClient and System.Data.SqlClient vulnerable to SQL Data Provider Security Feature Bypass </b> — affected files</summary>
+
+- `eShopModernizedNTier/src/eShopWinForms/eShopWinForms.csproj`
+
+</details>
+
+<details id="CVE-2024-21907_Improper_Handling_of_Exceptional_Conditions_in_Newtonsoft_Json">
+<summary><b>CVE-2024-21907: Improper Handling of Exceptional Conditions in Newtonsoft.Json</b> — affected files</summary>
+
+- `eShopModernizedNTier/src/eShopWinForms/eShopWinForms.csproj`
+- `eShopModernizedNTier/src/eShopWinForms/eShopWinForms.fx.csproj`
+
+</details>
+
+<details id="CWE-681_Incorrect_Conversion_between_Numeric_Types">
+<summary><b>CWE-681: Incorrect Conversion between Numeric Types</b> — affected files</summary>
+
+- `eShopModernizedNTier/src/eShopWCFService/Models/CatalogItemHiLoGenerator.cs`
+
+</details>
+
+<details id="CWE-778_Insufficient_Logging">
+<summary><b>CWE-778: Insufficient Logging</b> — affected files</summary>
+
+- `eShopModernizedNTier/src/eShopWCFService/CatalogService.svc.cs`
+- `eShopModernizedNTier/src/eShopWinForms/Controllers/CatalogController.cs`
+
+</details>
+
+<details id="CWE-22_Improper_Limitation_of_a_Pathname_to_a_Restricted_Directory_Path_Traversal">
+<summary><b>CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</b> — affected files</summary>
+
+- `eShopModernizedNTier/src/eShopWinForms/Views/CatalogView.cs`
+
+</details>
+
+<details id="CWE-23_Relative_Path_Traversal">
+<summary><b>CWE-23: Relative Path Traversal</b> — affected files</summary>
+
+- `eShopModernizedNTier/src/eShopWinForms/Views/CatalogView.cs`
+
+</details>
+
+---
+
+## Codebase Insights
+
+> **Note:** These documents are generated by AI and may contain inaccuracies or incomplete information. Please review carefully.
+
+> **Codebase Insights aren't available yet.**
+>
+> These documents are generated when assessment runs with **Full analysis** coverage. Re-run the assessment and set `analysisCoverage: full` to enable them.
+
+[Share feedback](https://aka.ms/ghcp-appmod/feedback)
