@@ -1,0 +1,103 @@
+{
+  "input_name": "CWE - Concurrency & Synchronization",
+  "analysis_method": "LLM",
+  "status": "success",
+  "result": {
+    "finding": "Assessed 6 CWE rules in Concurrency & Synchronization: 3 FOUND, 3 NOT_FOUND",
+    "confidence": "high",
+    "evidence": [
+      "Scanned application source files and Autofac module registrations for concurrency & synchronization patterns"
+    ],
+    "values": [
+      {
+        "id": "CWE-543",
+        "name": "Use of Singleton Pattern Without Synchronization in a Multithreaded Context",
+        "status": "FOUND",
+        "category": "Concurrency & Synchronization",
+        "severity": "potential",
+        "storyPoint": 5,
+        "description": "The product uses the singleton pattern when creating a resource within a multithreaded environment.",
+        "evidence": {
+          "files": [
+            "eShopLegacyMVCSolution/src/eShopLegacyMVC/Services/CatalogServiceMock.cs",
+            "eShopLegacyMVCSolution/src/eShopLegacyMVC/Modules/ApplicationModule.cs"
+          ],
+          "explanation": "CatalogServiceMock is registered with Autofac as a SingleInstance() service (see ApplicationModule.cs:22-23, applied when useMockData is true), so a single instance is shared across all concurrent ASP.NET MVC request threads. It holds a mutable private field `List<CatalogItem> catalogItems` (CatalogServiceMock.cs:12) that is read and mutated by CreateCatalogItem (lines 48-52), UpdateCatalogItem (lines 55-61), and RemoveCatalogItem (lines 64-67) with no lock, Monitor, or other synchronization primitive protecting access to the list. Concurrent requests calling these methods can race and corrupt the shared list (e.g. lost updates, InvalidOperationException from concurrent enumeration/mutation, or duplicate Id values from the unsynchronized `catalogItems.Max(i => i.Id)` + increment in CreateCatalogItem)."
+        }
+      },
+      {
+        "id": "CWE-567",
+        "name": "Unsynchronized Access to Shared Data in a Multithreaded Context",
+        "status": "FOUND",
+        "category": "Concurrency & Synchronization",
+        "severity": "potential",
+        "storyPoint": 5,
+        "description": "The product does not properly synchronize shared data, such as static variables across threads, which can lead to undefined behavior and unpredictable data changes.",
+        "evidence": {
+          "files": [
+            "eShopLegacyMVCSolution/src/eShopLegacyMVC/Services/CatalogServiceMock.cs",
+            "eShopLegacyMVCSolution/src/eShopLegacyMVC/Modules/ApplicationModule.cs"
+          ],
+          "explanation": "CatalogServiceMock is registered with Autofac as a SingleInstance() service (see ApplicationModule.cs:22-23, applied when useMockData is true), so a single instance is shared across all concurrent ASP.NET MVC request threads. It holds a mutable private field `List<CatalogItem> catalogItems` (CatalogServiceMock.cs:12) that is read and mutated by CreateCatalogItem (lines 48-52), UpdateCatalogItem (lines 55-61), and RemoveCatalogItem (lines 64-67) with no lock, Monitor, or other synchronization primitive protecting access to the list. Concurrent requests calling these methods can race and corrupt the shared list (e.g. lost updates, InvalidOperationException from concurrent enumeration/mutation, or duplicate Id values from the unsynchronized `catalogItems.Max(i => i.Id)` + increment in CreateCatalogItem)."
+        }
+      },
+      {
+        "id": "CWE-662",
+        "name": "Improper Synchronization",
+        "status": "NOT_FOUND",
+        "category": "Concurrency & Synchronization",
+        "severity": "potential",
+        "storyPoint": 8,
+        "description": "The product utilizes multiple threads or processes to allow temporary access to a shared resource that can only be exclusive to one process at a time, but it does not properly synchronize these actions, which might cause simultaneous accesses of this resource by multiple threads or processes.",
+        "evidence": {
+          "files": [],
+          "explanation": ""
+        }
+      },
+      {
+        "id": "CWE-667",
+        "name": "Improper Locking",
+        "status": "NOT_FOUND",
+        "category": "Concurrency & Synchronization",
+        "severity": "potential",
+        "storyPoint": 8,
+        "description": "The product does not properly acquire or release a lock on a resource, leading to unexpected resource state changes and behaviors.",
+        "evidence": {
+          "files": [],
+          "explanation": ""
+        }
+      },
+      {
+        "id": "CWE-820",
+        "name": "Missing Synchronization",
+        "status": "FOUND",
+        "category": "Concurrency & Synchronization",
+        "severity": "potential",
+        "storyPoint": 8,
+        "description": "The product utilizes a shared resource in a concurrent manner but does not attempt to synchronize access to the resource.",
+        "evidence": {
+          "files": [
+            "eShopLegacyMVCSolution/src/eShopLegacyMVC/Services/CatalogServiceMock.cs",
+            "eShopLegacyMVCSolution/src/eShopLegacyMVC/Modules/ApplicationModule.cs"
+          ],
+          "explanation": "CatalogServiceMock is registered with Autofac as a SingleInstance() service (see ApplicationModule.cs:22-23, applied when useMockData is true), so a single instance is shared across all concurrent ASP.NET MVC request threads. It holds a mutable private field `List<CatalogItem> catalogItems` (CatalogServiceMock.cs:12) that is read and mutated by CreateCatalogItem (lines 48-52), UpdateCatalogItem (lines 55-61), and RemoveCatalogItem (lines 64-67) with no lock, Monitor, or other synchronization primitive protecting access to the list. Concurrent requests calling these methods can race and corrupt the shared list (e.g. lost updates, InvalidOperationException from concurrent enumeration/mutation, or duplicate Id values from the unsynchronized `catalogItems.Max(i => i.Id)` + increment in CreateCatalogItem)."
+        }
+      },
+      {
+        "id": "CWE-821",
+        "name": "Incorrect Synchronization",
+        "status": "NOT_FOUND",
+        "category": "Concurrency & Synchronization",
+        "severity": "potential",
+        "storyPoint": 8,
+        "description": "The product utilizes a shared resource in a concurrent manner, but it does not correctly synchronize access to the resource.",
+        "evidence": {
+          "files": [],
+          "explanation": ""
+        }
+      }
+    ]
+  },
+  "execution_time_seconds": 0,
+  "timestamp": ""
+}
