@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyTitle>eShopWinForms</AssemblyTitle>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <Copyright>Copyright ©  2017</Copyright>
+    <FileVersion>1.0.0.0</FileVersion>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    <GenerateNeutralResourcesLanguageAttribute>false</GenerateNeutralResourcesLanguageAttribute>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <OutputType>WinExe</OutputType>
+    <Product>eShopWinForms</Product>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+  <!-- Assembly attributes moved from Properties/AssemblyInfo.cs -->
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.InteropServices.ComVisibleAttribute">
+      <_Parameter1>false</_Parameter1>
+      <_Parameter1_IsLiteral>true</_Parameter1_IsLiteral>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Runtime.InteropServices.GuidAttribute">
+      <_Parameter1>ae32909c-9ee6-4ece-b407-d23a15a1feed</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <!-- These UWP helper files were never compiled in the original project (explicit Compile items excluded them). -->
+  <ItemGroup>
+    <Compile Remove="Helpers\DependencyObjectExtensions.cs" />
+    <Compile Remove="Helpers\Json.cs" />
+    <Compile Remove="Helpers\NotificationsHelper.cs" />
+    <Compile Remove="Helpers\ResourceExtensions.cs" />
+    <Compile Remove="Helpers\SettingsStorageExtensions.cs" />
+    <Compile Remove="Helpers\Singleton.cs" />
+    <Compile Remove="Helpers\UploadImageHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.ServiceModel.Primitives" Version="10.1.0" />
+    <PackageReference Include="System.ServiceModel.Http" Version="10.1.0" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="10.1.0" />
+    <PackageReference Include="System.Net.Http.Json" Version="10.0.14" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.14" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

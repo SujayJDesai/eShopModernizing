@@ -1,0 +1,92 @@
+@page "/Catalog/Details/{Id:int}"
+@rendermode InteractiveServer
+@using eShopModernizedWebForms.Models
+@using eShopModernizedWebForms.Services
+@inject ICatalogService CatalogService
+@inject NavigationManager Navigation
+
+<PageTitle>Details</PageTitle>
+
+<h2 class="esh-body-title">Details</h2>
+
+@if (product is not null)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="col-md-8 esh-picture" src="@($"/Pics/{product.PictureFileName}")" alt="@product.Name" />
+            </div>
+            <dl class="col-md-4 dl-horizontal">
+                <dt>Name</dt>
+                <dd>
+                    <span>@product.Name</span>
+                </dd>
+
+                <dt>Description</dt>
+                <dd>
+                    <span>@product.Description</span>
+                </dd>
+
+                <dt>Brand</dt>
+                <dd>
+                    <span>@product.CatalogBrand?.Brand</span>
+                </dd>
+
+                <dt>Type</dt>
+                <dd>
+                    <span>@product.CatalogType?.Type</span>
+                </dd>
+
+                <dt>Price</dt>
+                <dd>
+                    <span class="esh-price">@product.Price</span>
+                </dd>
+            </dl>
+            <dl class="col-md-4 dl-horizontal">
+                <dt>Picture name</dt>
+                <dd>
+                    <span>@product.PictureFileName</span>
+                </dd>
+
+                <dt>Stock</dt>
+                <dd>
+                    <span>@product.AvailableStock</span>
+                </dd>
+
+                <dt>Restock</dt>
+                <dd>
+                    <span>@product.RestockThreshold</span>
+                </dd>
+
+                <dt>Max stock</dt>
+                <dd>
+                    <span>@product.MaxStockThreshold</span>
+                </dd>
+
+                <dd class="esh-button-actions">
+                    <a href="/" class="btn esh-button esh-button-secondary">
+                        [ Back to list ]
+                    </a>
+                    <a href="@($"/Catalog/Edit/{product.Id}")" class="btn esh-button esh-button-primary">
+                        [ Edit ]
+                    </a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    [Inject] private ILogger<Details> Logger { get; set; } = default!;
+
+    private CatalogItem? product;
+
+    protected override void OnInitialized()
+    {
+        Logger.LogInformation("Now loading... /Catalog/Details/{Id}", Id);
+        product = CatalogService.FindCatalogItem(Id);
+    }
+}

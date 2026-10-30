@@ -1,0 +1,84 @@
+@page "/Catalog/Delete/{Id:int}"
+@rendermode InteractiveServer
+@attribute [Authorize]
+@using eShopModernizedWebForms.Models
+@using eShopModernizedWebForms.Services
+@using Microsoft.AspNetCore.Authorization
+@inject ICatalogService CatalogService
+@inject NavigationManager Navigation
+
+<PageTitle>Delete</PageTitle>
+
+<h2 class="esh-body-title">Delete</h2>
+
+@if (productToDelete is not null)
+{
+    <div class="container">
+        <h3>Are you sure you want to delete this?</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <img class="col-md-8 esh-picture" src="@($"/Pics/{productToDelete.PictureFileName}")" alt="Product image" />
+            </div>
+            <dl class="col-md-4 dl-horizontal">
+                <dt>Name</dt>
+                <dd>@productToDelete.Name</dd>
+
+                <dt>Description</dt>
+                <dd>@productToDelete.Description</dd>
+
+                <dt>Brand</dt>
+                <dd>@productToDelete.CatalogBrand?.Brand</dd>
+
+                <dt>Type</dt>
+                <dd>@productToDelete.CatalogType?.Type</dd>
+
+                <dt>Price</dt>
+                <dd><span class="esh-price">@productToDelete.Price</span></dd>
+            </dl>
+            <dl class="col-md-4 dl-horizontal">
+                <dt>Picture name</dt>
+                <dd>@productToDelete.PictureFileName</dd>
+
+                <dt>Stock</dt>
+                <dd>@productToDelete.AvailableStock</dd>
+
+                <dt>Restock</dt>
+                <dd>@productToDelete.RestockThreshold</dd>
+
+                <dt>Max stock</dt>
+                <dd>@productToDelete.MaxStockThreshold</dd>
+
+                <dt></dt>
+                <dd class="esh-button-actions">
+                    <a href="/" class="btn esh-button esh-button-secondary">[ Cancel ]</a>
+                    <button class="btn esh-button esh-button-primary" @onclick="DeleteClick">[ Delete ]</button>
+                </dd>
+            </dl>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    [Inject] private ILogger<Delete> Logger { get; set; } = default!;
+
+    private CatalogItem? productToDelete;
+
+    protected override void OnInitialized()
+    {
+        Logger.LogInformation("Now loading... /Catalog/Delete/{Id}", Id);
+        productToDelete = CatalogService.FindCatalogItem(Id);
+    }
+
+    private void DeleteClick()
+    {
+        if (productToDelete is not null)
+        {
+            CatalogService.RemoveCatalogItem(productToDelete);
+        }
+
+        Navigation.NavigateTo("/");
+    }
+}

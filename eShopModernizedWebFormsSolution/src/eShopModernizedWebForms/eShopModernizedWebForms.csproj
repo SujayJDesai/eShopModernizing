@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+  <!-- PORT-TODO: Properties/AssemblyInfo.cs was not moved into this project
+       (not a simple attribute: [assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.xml")]). It is removed during the
+       port, so add these attributes back by hand if they are needed:
+         [assembly: AssemblyTitle("eShopModernizedWebForms")]
+         [assembly: AssemblyDescription("")]
+         [assembly: AssemblyConfiguration("")]
+         [assembly: AssemblyCompany("")]
+         [assembly: AssemblyProduct("eShopModernizedWebForms")]
+         [assembly: AssemblyCopyright("Copyright ©  2017")]
+         [assembly: AssemblyTrademark("")]
+         [assembly: AssemblyCulture("")]
+         [assembly: ComVisible(false)]
+         [assembly: Guid("4416714a-9bb8-480b-95b3-c2599598e3ec")]
+         [assembly: AssemblyVersion("1.0.0.0")]
+         [assembly: AssemblyFileVersion("1.0.0.0")]
+         [assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.xml")]
+  -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters" Version="2.3.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.14" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="4.16.1" />
+    <PackageReference Include="Microsoft.Identity.Web.UI" Version="4.16.1" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.14" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.14" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="3.2.0" />
+    <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.12.0" />
+    <PackageReference Include="Azure.Identity" Version="1.21.0" />
+    <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.4.0" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.92.0" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="8.23.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Logging" Version="8.23.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="8.23.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="8.23.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.23.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="StackExchange.Redis" Version="3.4.20" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.23.0" />
+    <PackageReference Include="Validation" Version="2.6.68" />
+    <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.21.0" />
+    <PackageReference Include="AWSSDK.S3" Version="4.0.104.8" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="4.0.102.7" />
+  </ItemGroup>
+</Project>

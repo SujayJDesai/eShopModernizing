@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+  <!-- PORT-TODO: Properties/AssemblyInfo.cs was not moved into this project
+       (not a simple attribute: [assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.xml")]). It is removed during the
+       port, so add these attributes back by hand if they are needed:
+         [assembly: AssemblyTitle("eShopLegacyMVC")]
+         [assembly: AssemblyDescription("")]
+         [assembly: AssemblyConfiguration("")]
+         [assembly: AssemblyCompany("")]
+         [assembly: AssemblyProduct("eShopLegacyMVC")]
+         [assembly: AssemblyCopyright("Copyright ©  2017")]
+         [assembly: AssemblyTrademark("")]
+         [assembly: AssemblyCulture("")]
+         [assembly: ComVisible(false)]
+         [assembly: Guid("fdd609f1-1164-407a-9b3c-bfec8c1bdb8c")]
+         [assembly: AssemblyVersion("1.0.0.0")]
+         [assembly: AssemblyFileVersion("1.0.0.0")]
+         [assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.xml")]
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\eShopLegacy.Utilities\eShopLegacy.Utilities.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters" Version="2.3.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.14" />
+    <PackageReference Include="Autofac" Version="4.9.1" />
+    <PackageReference Include="EntityFramework" Version="6.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.14" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="log4net" Version="2.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.14" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="3.2.0" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.1.0" />
+    <PackageReference Include="Microsoft.AspNet.Razor" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.1.0" />
+  </ItemGroup>
+</Project>

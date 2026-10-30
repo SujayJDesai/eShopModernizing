@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>eShopWinForms</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>eShopWinForms</RootNamespace>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+  <!-- PORT-TODO: Properties/AssemblyInfo.cs was not moved into this project
+       (AssemblyInfo.cs is shared with eShopWinForms.csproj). It is removed during the
+       port, so add these attributes back by hand if they are needed:
+         [assembly: AssemblyTitle("eShopWinForms")]
+         [assembly: AssemblyDescription("")]
+         [assembly: AssemblyConfiguration("")]
+         [assembly: AssemblyCompany("")]
+         [assembly: AssemblyProduct("eShopWinForms")]
+         [assembly: AssemblyCopyright("Copyright ©  2017")]
+         [assembly: AssemblyTrademark("")]
+         [assembly: AssemblyCulture("")]
+         [assembly: ComVisible(false)]
+         [assembly: Guid("ae32909c-9ee6-4ece-b407-d23a15a1feed")]
+         [assembly: AssemblyVersion("1.0.0.0")]
+         [assembly: AssemblyFileVersion("1.0.0.0")]
+  -->
+  <ItemGroup>
+    <PackageReference Include="System.ServiceModel.Primitives" Version="10.1.0" />
+    <PackageReference Include="System.ServiceModel.Http" Version="10.1.0" />
+    <PackageReference Include="System.Net.Http.Json" Version="10.0.14" />
+  </ItemGroup>
+</Project>

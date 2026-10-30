@@ -1,0 +1,96 @@
+@page "/Catalog/Delete/{ProductId:int}"
+@rendermode InteractiveServer
+@using eShopLegacyWebForms.Models
+@using eShopLegacyWebForms.Services
+@inject ICatalogService CatalogService
+@inject NavigationManager Navigation
+@inject ILogger<Delete> Logger
+
+<PageTitle>Delete</PageTitle>
+
+<h2 class="esh-body-title">Delete</h2>
+
+<div class="container">
+    @if (productToDelete != null)
+    {
+        <h3>Are you sure you want to delete this?</h3>
+        <div class="row">
+            <img class="col-md-6 esh-picture" src="@("/Pics/" + productToDelete.PictureFileName)" />
+            <dl class="col-md-6 dl-horizontal">
+                <dt>Name</dt>
+                <dd>
+                    <span>@productToDelete.Name</span>
+                </dd>
+
+                <dt>Description</dt>
+                <dd>
+                    <span>@productToDelete.Description</span>
+                </dd>
+
+                <dt>Brand</dt>
+                <dd>
+                    <span>@productToDelete.CatalogBrand?.Brand</span>
+                </dd>
+
+                <dt>Type</dt>
+                <dd>
+                    <span>@productToDelete.CatalogType?.Type</span>
+                </dd>
+
+                <dt>Price</dt>
+                <dd>
+                    <span class="esh-price">@productToDelete.Price</span>
+                </dd>
+
+                <dt>Picture name</dt>
+                <dd>
+                    <span>@productToDelete.PictureFileName</span>
+                </dd>
+
+                <dt>Stock</dt>
+                <dd>
+                    <span>@productToDelete.AvailableStock</span>
+                </dd>
+
+                <dt>Restock</dt>
+                <dd>
+                    <span>@productToDelete.RestockThreshold</span>
+                </dd>
+
+                <dt>Max stock</dt>
+                <dd>
+                    <span>@productToDelete.MaxStockThreshold</span>
+                </dd>
+
+                <dt></dt>
+                <dd class="text-right esh-button-actions">
+                    <a href="/" class="btn esh-button esh-button-secondary">[ Cancel ]</a>
+                    <button class="btn esh-button esh-button-primary" @onclick="DeleteClick">[ Delete ]</button>
+                </dd>
+            </dl>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public int ProductId { get; set; }
+
+    private CatalogItem? productToDelete;
+
+    protected override void OnInitialized()
+    {
+        Logger.LogInformation("Now loading... /Catalog/Delete/{ProductId}", ProductId);
+        productToDelete = CatalogService.FindCatalogItem(ProductId);
+    }
+
+    private void DeleteClick()
+    {
+        if (productToDelete != null)
+        {
+            CatalogService.RemoveCatalogItem(productToDelete);
+        }
+
+        Navigation.NavigateTo("/");
+    }
+}

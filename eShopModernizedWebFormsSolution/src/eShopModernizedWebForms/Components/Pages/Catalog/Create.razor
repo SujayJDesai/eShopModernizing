@@ -1,0 +1,213 @@
+@page "/Catalog/Create"
+@rendermode InteractiveServer
+@attribute [Authorize]
+
+@using eShopModernizedWebForms.Models
+@using eShopModernizedWebForms.Services
+@using Microsoft.AspNetCore.Authorization
+@using System.IO
+
+@inject ICatalogService CatalogService
+@inject IImageService ImageService
+@inject NavigationManager Navigation
+@inject IConfiguration Configuration
+
+<PageTitle>Create</PageTitle>
+
+<h2 class="esh-body-title">Create</h2>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="row">
+                <img class="esh-picture" src="@pictureUri" alt="Catalog item image" />
+            </div>
+
+            @if (showUploadButton)
+            {
+                <div id="UploadButton" class="row">
+                    <div class="col-md-6">
+                        <label class="btn btn-default esh-button-upload">
+                            Upload image
+                            <InputFile id="uploadEditorImage" accept="image/*" class="hidden" OnChange="OnImageSelected" />
+                        </label>
+                        <input type="hidden" id="TempImageName" @bind="tempImageName" />
+                    </div>
+
+                    <div class="esh-loader col-md-3 hidden"></div>
+                    <div class="col-md-6">
+                        <span class="text-danger field-validation-error" id="img-validation-error">@imageValidationError</span>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="col-md-8 form-horizontal">
+            <EditForm Model="catalogItem" FormName="createCatalogItem" OnValidSubmit="CreateClick">
+                <DataAnnotationsValidator />
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Name</label>
+                    <div class="col-md-8">
+                        <InputText id="Name" @bind-Value="catalogItem.Name" class="form-control" />
+                        <ValidationMessage For="@(() => catalogItem.Name)" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Description</label>
+                    <div class="col-md-8">
+                        <InputText id="Description" @bind-Value="catalogItem.Description" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Brand</label>
+                    <div class="col-md-8">
+                        <select id="Brand" value="@catalogItem.CatalogBrandId" @onchange="OnBrandChanged" class="form-control">
+                            @foreach (var brand in brands)
+                            {
+                                <option value="@brand.Id">@brand.Brand</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Type</label>
+                    <div class="col-md-8">
+                        <select id="Type" value="@catalogItem.CatalogTypeId" @onchange="OnTypeChanged" class="form-control">
+                            @foreach (var type in types)
+                            {
+                                <option value="@type.Id">@type.Type</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Price</label>
+                    <div class="col-md-8">
+                        <InputNumber id="Price" @bind-Value="catalogItem.Price" class="form-control" />
+                        <ValidationMessage For="@(() => catalogItem.Price)" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Stock</label>
+                    <div class="col-md-8">
+                        <InputNumber id="Stock" @bind-Value="catalogItem.AvailableStock" class="form-control" />
+                        <ValidationMessage For="@(() => catalogItem.AvailableStock)" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Restock</label>
+                    <div class="col-md-8">
+                        <InputNumber id="Restock" @bind-Value="catalogItem.RestockThreshold" class="form-control" />
+                        <ValidationMessage For="@(() => catalogItem.RestockThreshold)" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Max stock</label>
+                    <div class="col-md-8">
+                        <InputNumber id="Maxstock" @bind-Value="catalogItem.MaxStockThreshold" class="form-control" />
+                        <ValidationMessage For="@(() => catalogItem.MaxStockThreshold)" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-8 text-right esh-button-actions">
+                        <a href="/" class="btn esh-button esh-button-secondary">[ Cancel ]</a>
+                        <button type="submit" class="btn esh-button esh-button-primary">[ Create ]</button>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+@code {
+    private CatalogItem catalogItem = new();
+    private string pictureUri = string.Empty;
+    private string tempImageName = string.Empty;
+    private string imageValidationError = string.Empty;
+    private bool showUploadButton;
+    private IEnumerable<CatalogBrand> brands = Enumerable.Empty<CatalogBrand>();
+    private IEnumerable<CatalogType> types = Enumerable.Empty<CatalogType>();
+
+    [Inject] private ILogger<Create> Logger { get; set; } = default!;
+
+    protected override void OnInitialized()
+    {
+        Logger.LogInformation("Now loading... /Catalog/Create");
+
+        showUploadButton = bool.TryParse(Configuration["UseAzureStorage"], out var useAzure) && useAzure;
+
+        pictureUri = ImageService.UrlDefaultImage();
+        brands = CatalogService.GetCatalogBrands();
+        types = CatalogService.GetCatalogTypes();
+    }
+
+    private void OnBrandChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out var brandId))
+        {
+            catalogItem.CatalogBrandId = brandId;
+        }
+    }
+
+    private void OnTypeChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out var typeId))
+        {
+            catalogItem.CatalogTypeId = typeId;
+        }
+    }
+
+    private async Task OnImageSelected(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        if (file is not null)
+        {
+            try
+            {
+                using var stream = file.OpenReadStream(maxAllowedSize: 10 * 1024 * 1024);
+                var formFile = new FormFile(stream, 0, file.Size, file.Name, file.Name)
+                {
+                    Headers = new HeaderDictionary(),
+                    ContentType = file.ContentType
+                };
+                tempImageName = ImageService.UploadTempImage(formFile, null);
+                pictureUri = ImageService.BaseUrl() + tempImageName;
+                imageValidationError = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, "Error uploading image");
+                imageValidationError = "Error uploading image. Please try again.";
+            }
+        }
+    }
+
+    private void CreateClick()
+    {
+        catalogItem.TempImageName = tempImageName;
+
+        if (!string.IsNullOrEmpty(catalogItem.TempImageName))
+        {
+            var fileName = Path.GetFileName(catalogItem.TempImageName);
+            catalogItem.PictureFileName = fileName;
+        }
+
+        CatalogService.CreateCatalogItem(catalogItem);
+
+        if (!string.IsNullOrEmpty(catalogItem.TempImageName))
+        {
+            ImageService.UpdateImage(catalogItem);
+        }
+
+        Navigation.NavigateTo("/");
+    }
+}
